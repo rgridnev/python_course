@@ -1,1 +1,1 @@
-# netology_pyda
+# python_course
