@@ -13211,12 +13211,12 @@ a.anchor-link {
 </div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># https://grouplens.org/datasets/movielens/</span>
 
-<span class="n">ratings</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;ml-latest/ratings.csv&#39;</span><span class="p">)</span>
+<span class="n">ratings</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;ml-latest-small/ratings.csv&#39;</span><span class="p">)</span>
 <span class="n">ratings</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
@@ -13230,7 +13230,7 @@ a.anchor-link {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[2]:</div>
+    <div class="prompt output_prompt">Out[3]:</div>
 
 
 
@@ -13261,39 +13261,39 @@ a.anchor-link {
   </thead>
   <tbody>
     <tr>
-      <th>0</th>
+      <td>0</td>
       <td>1</td>
-      <td>110</td>
-      <td>1.0</td>
-      <td>1425941529</td>
+      <td>1</td>
+      <td>4.0</td>
+      <td>964982703</td>
     </tr>
     <tr>
-      <th>1</th>
       <td>1</td>
-      <td>147</td>
-      <td>4.5</td>
-      <td>1425942435</td>
+      <td>1</td>
+      <td>3</td>
+      <td>4.0</td>
+      <td>964981247</td>
     </tr>
     <tr>
-      <th>2</th>
+      <td>2</td>
       <td>1</td>
-      <td>858</td>
+      <td>6</td>
+      <td>4.0</td>
+      <td>964982224</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>1</td>
+      <td>47</td>
       <td>5.0</td>
-      <td>1425941523</td>
+      <td>964983815</td>
     </tr>
     <tr>
-      <th>3</th>
+      <td>4</td>
       <td>1</td>
-      <td>1221</td>
+      <td>50</td>
       <td>5.0</td>
-      <td>1425941546</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>1</td>
-      <td>1246</td>
-      <td>5.0</td>
-      <td>1425941556</td>
+      <td>964982931</td>
     </tr>
   </tbody>
 </table>
@@ -13308,7 +13308,7 @@ a.anchor-link {
 </div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">ratings</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
@@ -13329,14 +13329,14 @@ a.anchor-link {
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
-RangeIndex: 26024289 entries, 0 to 26024288
+RangeIndex: 100836 entries, 0 to 100835
 Data columns (total 4 columns):
-userId       int64
-movieId      int64
-rating       float64
-timestamp    int64
+userId       100836 non-null int64
+movieId      100836 non-null int64
+rating       100836 non-null float64
+timestamp    100836 non-null int64
 dtypes: float64(1), int64(3)
-memory usage: 794.2 MB
+memory usage: 3.1 MB
 </pre>
 </div>
 </div>
@@ -13347,7 +13347,7 @@ memory usage: 794.2 MB
 </div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># сколько фильмов в коллекции</span>
@@ -13364,13 +13364,13 @@ memory usage: 794.2 MB
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[4]:</div>
+    <div class="prompt output_prompt">Out[5]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>45115</pre>
+<pre>9724</pre>
 </div>
 
 </div>
@@ -13381,7 +13381,7 @@ memory usage: 794.2 MB
 </div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>
@@ -13404,15 +13404,14 @@ memory usage: 794.2 MB
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>CPU times: user 1.05 s, sys: 693 ms, total: 1.74 s
-Wall time: 1.83 s
+<pre>Wall time: 18 ms
 </pre>
 </div>
 </div>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[5]:</div>
+    <div class="prompt output_prompt">Out[6]:</div>
 
 
 
@@ -13448,34 +13447,34 @@ Wall time: 1.83 s
   </thead>
   <tbody>
     <tr>
-      <th>45811</th>
-      <td>18276</td>
-      <td>18276</td>
-      <td>18276</td>
+      <td>414</td>
+      <td>2698</td>
+      <td>2698</td>
+      <td>2698</td>
     </tr>
     <tr>
-      <th>8659</th>
-      <td>9279</td>
-      <td>9279</td>
-      <td>9279</td>
+      <td>599</td>
+      <td>2478</td>
+      <td>2478</td>
+      <td>2478</td>
     </tr>
     <tr>
-      <th>270123</th>
-      <td>7638</td>
-      <td>7638</td>
-      <td>7638</td>
+      <td>474</td>
+      <td>2108</td>
+      <td>2108</td>
+      <td>2108</td>
     </tr>
     <tr>
-      <th>179792</th>
-      <td>7515</td>
-      <td>7515</td>
-      <td>7515</td>
+      <td>448</td>
+      <td>1864</td>
+      <td>1864</td>
+      <td>1864</td>
     </tr>
     <tr>
-      <th>228291</th>
-      <td>7410</td>
-      <td>7410</td>
-      <td>7410</td>
+      <td>274</td>
+      <td>1346</td>
+      <td>1346</td>
+      <td>1346</td>
     </tr>
   </tbody>
 </table>
@@ -13497,7 +13496,7 @@ Wall time: 1.83 s
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">ratings_grouped</span> <span class="o">=</span> <span class="n">ratings</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;userId&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">([</span><span class="nb">min</span><span class="p">,</span> <span class="nb">max</span><span class="p">])</span>
@@ -13514,7 +13513,7 @@ Wall time: 1.83 s
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[6]:</div>
+    <div class="prompt output_prompt">Out[7]:</div>
 
 
 
@@ -13566,49 +13565,49 @@ Wall time: 1.83 s
   </thead>
   <tbody>
     <tr>
-      <th>1</th>
-      <td>110</td>
-      <td>112552</td>
+      <td>1</td>
+      <td>1</td>
+      <td>5060</td>
+      <td>1.0</td>
+      <td>5.0</td>
+      <td>964980499</td>
+      <td>965719662</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>318</td>
+      <td>131724</td>
+      <td>2.0</td>
+      <td>5.0</td>
+      <td>1445714835</td>
+      <td>1445715340</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>31</td>
+      <td>72378</td>
       <td>0.5</td>
       <td>5.0</td>
-      <td>1425941300</td>
-      <td>1425942699</td>
+      <td>1306463323</td>
+      <td>1306464293</td>
     </tr>
     <tr>
-      <th>2</th>
+      <td>4</td>
+      <td>21</td>
+      <td>4967</td>
+      <td>1.0</td>
+      <td>5.0</td>
+      <td>945078428</td>
+      <td>1007574542</td>
+    </tr>
+    <tr>
       <td>5</td>
-      <td>1552</td>
+      <td>1</td>
+      <td>608</td>
       <td>1.0</td>
       <td>5.0</td>
-      <td>867039165</td>
-      <td>867041296</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>480</td>
-      <td>4474</td>
-      <td>2.0</td>
-      <td>4.0</td>
-      <td>1048076830</td>
-      <td>1048077048</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>223</td>
-      <td>5679</td>
-      <td>1.0</td>
-      <td>5.0</td>
-      <td>1042667845</td>
-      <td>1042674886</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>7</td>
-      <td>3255</td>
-      <td>1.0</td>
-      <td>5.0</td>
-      <td>949423787</td>
-      <td>949424522</td>
+      <td>847434747</td>
+      <td>847435337</td>
     </tr>
   </tbody>
 </table>
@@ -13623,7 +13622,7 @@ Wall time: 1.83 s
 </div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">ratings_grouped</span><span class="p">[</span><span class="s1">&#39;diff&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ratings_grouped</span><span class="p">[</span><span class="s1">&#39;timestamp&#39;</span><span class="p">][</span><span class="s1">&#39;max&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">ratings_grouped</span><span class="p">[</span><span class="s1">&#39;timestamp&#39;</span><span class="p">][</span><span class="s1">&#39;min&#39;</span><span class="p">]</span>
@@ -13640,7 +13639,7 @@ Wall time: 1.83 s
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[7]:</div>
+    <div class="prompt output_prompt">Out[8]:</div>
 
 
 
@@ -13695,54 +13694,54 @@ Wall time: 1.83 s
   </thead>
   <tbody>
     <tr>
-      <th>1</th>
-      <td>110</td>
-      <td>112552</td>
+      <td>1</td>
+      <td>1</td>
+      <td>5060</td>
+      <td>1.0</td>
+      <td>5.0</td>
+      <td>964980499</td>
+      <td>965719662</td>
+      <td>739163</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>318</td>
+      <td>131724</td>
+      <td>2.0</td>
+      <td>5.0</td>
+      <td>1445714835</td>
+      <td>1445715340</td>
+      <td>505</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>31</td>
+      <td>72378</td>
       <td>0.5</td>
       <td>5.0</td>
-      <td>1425941300</td>
-      <td>1425942699</td>
-      <td>1399</td>
+      <td>1306463323</td>
+      <td>1306464293</td>
+      <td>970</td>
     </tr>
     <tr>
-      <th>2</th>
+      <td>4</td>
+      <td>21</td>
+      <td>4967</td>
+      <td>1.0</td>
+      <td>5.0</td>
+      <td>945078428</td>
+      <td>1007574542</td>
+      <td>62496114</td>
+    </tr>
+    <tr>
       <td>5</td>
-      <td>1552</td>
+      <td>1</td>
+      <td>608</td>
       <td>1.0</td>
       <td>5.0</td>
-      <td>867039165</td>
-      <td>867041296</td>
-      <td>2131</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>480</td>
-      <td>4474</td>
-      <td>2.0</td>
-      <td>4.0</td>
-      <td>1048076830</td>
-      <td>1048077048</td>
-      <td>218</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>223</td>
-      <td>5679</td>
-      <td>1.0</td>
-      <td>5.0</td>
-      <td>1042667845</td>
-      <td>1042674886</td>
-      <td>7041</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>7</td>
-      <td>3255</td>
-      <td>1.0</td>
-      <td>5.0</td>
-      <td>949423787</td>
-      <td>949424522</td>
-      <td>735</td>
+      <td>847434747</td>
+      <td>847435337</td>
+      <td>590</td>
     </tr>
   </tbody>
 </table>
@@ -13757,7 +13756,7 @@ Wall time: 1.83 s
 </div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">ratings_grouped</span><span class="p">[</span><span class="s1">&#39;diff&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="o">/</span> <span class="mi">24</span> <span class="o">/</span> <span class="mi">3600</span>
@@ -13773,13 +13772,13 @@ Wall time: 1.83 s
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[8]:</div>
+    <div class="prompt output_prompt">Out[9]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>126.22761148027357</pre>
+<pre>234.29512251442014</pre>
 </div>
 
 </div>
@@ -13790,12 +13789,12 @@ Wall time: 1.83 s
 </div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>
 
-<span class="n">ratings</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;ml-latest/ratings.csv&#39;</span><span class="p">)</span>
+<span class="n">ratings</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;ml-latest-small/ratings.csv&#39;</span><span class="p">)</span>
 <span class="n">ratings_grouped</span> <span class="o">=</span> <span class="n">ratings</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;userId&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">([</span><span class="nb">min</span><span class="p">,</span> <span class="nb">max</span><span class="p">])</span>
 <span class="n">ratings_grouped</span><span class="p">[</span><span class="s1">&#39;diff&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ratings_grouped</span><span class="p">[</span><span class="s1">&#39;timestamp&#39;</span><span class="p">][</span><span class="s1">&#39;max&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">ratings_grouped</span><span class="p">[</span><span class="s1">&#39;timestamp&#39;</span><span class="p">][</span><span class="s1">&#39;min&#39;</span><span class="p">]</span>
 
@@ -13816,10 +13815,22 @@ Wall time: 1.83 s
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>CPU times: user 14.3 s, sys: 2.41 s, total: 16.7 s
-Wall time: 18 s
+<pre>Wall time: 103 ms
 </pre>
 </div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[11]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>234.29512251442014</pre>
+</div>
+
 </div>
 
 </div>
@@ -13835,10 +13846,10 @@ Wall time: 18 s
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">movies</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;ml-latest/movies.csv&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">movies</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;ml-latest-small/movies.csv&#39;</span><span class="p">)</span>
 <span class="n">movies</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
@@ -13852,7 +13863,7 @@ Wall time: 18 s
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[10]:</div>
+    <div class="prompt output_prompt">Out[12]:</div>
 
 
 
@@ -13882,31 +13893,31 @@ Wall time: 18 s
   </thead>
   <tbody>
     <tr>
-      <th>0</th>
+      <td>0</td>
       <td>1</td>
       <td>Toy Story (1995)</td>
       <td>Adventure|Animation|Children|Comedy|Fantasy</td>
     </tr>
     <tr>
-      <th>1</th>
+      <td>1</td>
       <td>2</td>
       <td>Jumanji (1995)</td>
       <td>Adventure|Children|Fantasy</td>
     </tr>
     <tr>
-      <th>2</th>
+      <td>2</td>
       <td>3</td>
       <td>Grumpier Old Men (1995)</td>
       <td>Comedy|Romance</td>
     </tr>
     <tr>
-      <th>3</th>
+      <td>3</td>
       <td>4</td>
       <td>Waiting to Exhale (1995)</td>
       <td>Comedy|Drama|Romance</td>
     </tr>
     <tr>
-      <th>4</th>
+      <td>4</td>
       <td>5</td>
       <td>Father of the Bride Part II (1995)</td>
       <td>Comedy</td>
@@ -13924,7 +13935,7 @@ Wall time: 18 s
 </div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">joined</span> <span class="o">=</span> <span class="n">ratings</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">movies</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;movieId&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>
@@ -13941,7 +13952,7 @@ Wall time: 18 s
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[11]:</div>
+    <div class="prompt output_prompt">Out[13]:</div>
 
 
 
@@ -13974,49 +13985,49 @@ Wall time: 18 s
   </thead>
   <tbody>
     <tr>
-      <th>0</th>
+      <td>0</td>
       <td>1</td>
-      <td>110</td>
-      <td>1.0</td>
-      <td>1425941529</td>
-      <td>Braveheart (1995)</td>
-      <td>Action|Drama|War</td>
+      <td>1</td>
+      <td>4.0</td>
+      <td>964982703</td>
+      <td>Toy Story (1995)</td>
+      <td>Adventure|Animation|Children|Comedy|Fantasy</td>
     </tr>
     <tr>
-      <th>1</th>
       <td>1</td>
-      <td>147</td>
-      <td>4.5</td>
-      <td>1425942435</td>
-      <td>Basketball Diaries, The (1995)</td>
-      <td>Drama</td>
+      <td>1</td>
+      <td>3</td>
+      <td>4.0</td>
+      <td>964981247</td>
+      <td>Grumpier Old Men (1995)</td>
+      <td>Comedy|Romance</td>
     </tr>
     <tr>
-      <th>2</th>
+      <td>2</td>
       <td>1</td>
-      <td>858</td>
+      <td>6</td>
+      <td>4.0</td>
+      <td>964982224</td>
+      <td>Heat (1995)</td>
+      <td>Action|Crime|Thriller</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>1</td>
+      <td>47</td>
       <td>5.0</td>
-      <td>1425941523</td>
-      <td>Godfather, The (1972)</td>
-      <td>Crime|Drama</td>
+      <td>964983815</td>
+      <td>Seven (a.k.a. Se7en) (1995)</td>
+      <td>Mystery|Thriller</td>
     </tr>
     <tr>
-      <th>3</th>
+      <td>4</td>
       <td>1</td>
-      <td>1221</td>
+      <td>50</td>
       <td>5.0</td>
-      <td>1425941546</td>
-      <td>Godfather: Part II, The (1974)</td>
-      <td>Crime|Drama</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>1</td>
-      <td>1246</td>
-      <td>5.0</td>
-      <td>1425941556</td>
-      <td>Dead Poets Society (1989)</td>
-      <td>Drama</td>
+      <td>964982931</td>
+      <td>Usual Suspects, The (1995)</td>
+      <td>Crime|Mystery|Thriller</td>
     </tr>
   </tbody>
 </table>
