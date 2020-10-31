@@ -129,3 +129,6 @@ dmypy.json
 .pyre/
 tlgbot/modules/secret.py
 .vscode/settings.json
+
+# Large files
+/ensemble/train.csv
