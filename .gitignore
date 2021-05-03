@@ -7,6 +7,7 @@ __pycache__/
 *.csv
 *.dat
 *.bz2
+*.txt
 
 # C extensions
 *.so
