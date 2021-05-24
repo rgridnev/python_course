@@ -8,6 +8,10 @@ __pycache__/
 *.dat
 *.bz2
 *.txt
+*.hdf
+*.zip
+*.xls
+*.xlsx
 
 # C extensions
 *.so
